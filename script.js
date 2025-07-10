@@ -1,40 +1,28 @@
+// Function to find the minimum (earliest) date in an array
 function minDate(dates) {
-  //write you code here
+  // Clone the array to avoid modifying the original input
+  const sortedDates = [...dates].sort();
+  // Return the first (earliest) date
+  return sortedDates[0];
 }
 
-// Do not change the code
+// Example 1
+const dates1 = ["2023/03/01", "2023/03/02", "2023/03/03"];
+console.log("Earliest date:", minDate(dates1)); 
+// Expected Output: "2023/03/01"
 
-var dates = [
-  "2023/03/01",
-  "2023/03/02",
-  "2023/03/03",
-  "2023/03/04",
-  "2023/03/05",
-  "2023/03/06",
-  "2023/03/07",
-  "2023/03/08",
-  "2023/03/09",
-  "2023/03/10",
-  "2023/03/11",
-  "2023/03/12",
-  "2023/03/13",
-  "2023/03/14",
-  "2023/03/15",
-  "2023/03/16",
-  "2023/03/17",
-  "2023/03/18",
-  "2023/03/19",
-  "2023/03/20",
-  "2023/03/21",
-  "2023/03/22",
-  "2023/03/23",
-  "2023/03/24",
-  "2023/03/25",
-  "2023/03/26",
-  "2023/03/27",
-  "2023/03/28",
-  "2023/03/29",
-  "2023/03/30",
-];
+// Example 2
+const dates2 = ["2023/01/01", "2023/02/02", "2022/12/31"];
+console.log("Earliest date:", minDate(dates2)); 
+// Expected Output: "2022/12/31"
 
-alert(minDate(dates));
+// Example 3 - same year but different months
+const dates3 = ["2025/06/10", "2025/01/15", "2025/04/30"];
+console.log("Earliest date:", minDate(dates3)); 
+// Expected Output: "2025/01/15"
+
+// Example 4 - same year and month, different days
+const dates4 = ["2024/12/25", "2024/12/01", "2024/12/10"];
+console.log("Earliest date:", minDate(dates4)); 
+// Expected Output: "2024/12/01"
+
